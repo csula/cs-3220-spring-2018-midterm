@@ -2,9 +2,9 @@
 
 ## Deliverables
 
-* Single text containing link to pull request
+* Single text containing the link to the pull request
 
-In the pull request, it should contain changes as followed:
+In the pull request, it should contain the following changes:
 
 * HTML form elements in `index.html` [2 pt]
 * BufferQueue in `src/models/queue.js` [2 pts]
@@ -17,29 +17,41 @@ In the pull request, it should contain changes as followed:
 
 ## Context
 
-Your job here is to implement a animated bar chart that displays
-last few differences in real time like gif below:
+Your mission is to implement an animated bar chart that displays
+last few values in real time like gif showing below:
 
 ![animated chart demo](demo.gif)
 
-To do so, you will need to implement a few different components like
-BufferQueue data structure as well as the chart web component
-and a couple other utilities methods.
+To do so, you will need to implement a few components -
+BufferQueue data structure, the Chart web component
+and a couple other utilities methods like main under app.js and tick
+function under tick.js.
 
 ### Instructions
 
-As you start hacking, you may find the midterm to be a huge project. It's okay to
-feel _overwhelmed_. The general suggestion is to start by looking at lower level
-components first without worry about combining everything all together.
-For example, you may find a good start point by looking at the BufferQueue in
-`src/models/queue.js` as well as the tests provided in the `test/queue.test.js`
-to implement the queue.
+As you start hacking, you may find the midterm to be overwhelming big and
+may not know where to start. It's okay to feel _overwhelmed_. A general
+suggestion is to start by looking at the low level components first without
+worry about combining everything all together. You should be thinking in
+terms of components and how they connect to each other separately as a
+Software Engineer.  For example, you may find a good start point by looking
+at the BufferQueue in `src/models/queue.js` as well as the tests provided
+in the `test/queue.test.js` to implement the queue.
 
-That being said, the suggested steps to implement the midterm is as followed:
+That being said, the suggested steps is:
 
 1. Add forms and styles under `index.html`
 2. BufferQueue in `src/models/queue.js`
+	1. push method
+	2. setSize method
 3. GameGraph in `src/views/graph.js`
+	1. render method
+		1. Render the bars given default values
+	2. handleChange method
+	3. connectedCallback method
+	4. attributeChangeCallback
+	5. going back to render method
+		1. Change render method to take parameters from instance variable like color or style
 4. tick function in `src/tick.js`
 5. glue everything together in `src/app.js`
 
