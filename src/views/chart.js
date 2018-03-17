@@ -15,6 +15,9 @@ export class GameChart extends HTMLElement {
         return ['data-values', 'data-color', 'data-display-style'];
     }
 
+    // reset the property from normal binding to use getter/setter
+    // or the setter may not be called properly if the attribute
+    // is set prior to GameChart being instantiated
     _upgradeProperty(prop) {
         if (this.hasOwnProperty(prop)) {
             let value = this[prop];
@@ -51,10 +54,10 @@ export class GameChart extends HTMLElement {
 
     connectedCallback () {
         // upgrade property so that the es6 setter can be called properly
-        ['colors', 'values', 'displayStyle'].forEach(p => {
+        ['color', 'values', 'displayStyle'].forEach(p => {
             this._upgradeProperty(p);
         });
-        // TODO: call render method :)
+        // TODO: call render method or handleChange :)
     }
 
     handleChange() {
@@ -63,11 +66,13 @@ export class GameChart extends HTMLElement {
 
     attributeChangedCallback () {
         // TODO: get attributes from dataset and re-render accordingly
+        //       e.g. <game-chart data-values="1,2,3" data-displayStyle="vertical" data-color="#eaeaea"></game-chart>
     }
 
     render () {
-        // TODO: render chart DOM
-        // note: the bar should display in *reverse* order of the values
+        // TODO: render chart HTML under the DOM
+        // note: the bar should display in *reverse* order of the values received
+        // hint: when computing height/width, remember you have a _static baseUnit_ method above
     }
 }
 
