@@ -75,6 +75,7 @@ npm run build
 
 This will bundle the `src/app.js` and all files imported in the app.js to
 `dest/app.bundle.js`
+Then, you can import this bundled JavaScript file in your `index.html`
 
 ## Testing
 
@@ -85,6 +86,9 @@ npm test
 ```
 
 ## Developing
+
+Below is a list of file structure provided in the midterm starter code.
+You can use the following code to better understand the overall picture.
 
 ```
 [I] ✦ ➜ tree midterm
